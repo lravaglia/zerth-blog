@@ -17,11 +17,11 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={site.title} description={site.description} />
 	</head>
 	<body>
+		<main>
 		<Header />
-		<main style="display: flex; flex-direction: column;">
 			{
 				posts.map(({slug, data: {title, description, pubDate}}) => (
-					<article style="display: flex; justify-content: space-between; align-items: baseline;">
+					<section style="display: flex; justify-content: space-between; align-items: baseline;">
 						<a href={`/blog/${slug}/`}>
 							<h4 class="title">{title}</h4>
 						</a>
@@ -29,10 +29,10 @@ const posts = (await getCollection('blog')).sort(
 						<p>
 							<FormattedDate date={pubDate} />
 						</p>
-					</article>
+					</section>
 				))
 			}
-		</main>
 		<Footer />
+		</main>
 	</body>
 </html>
