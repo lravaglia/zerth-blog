@@ -7,5 +7,4 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://zerth-blog.vercel.app',
 	integrations: [mdx(), sitemap()],
-	redirects: { "/": "/blog" }
 });
